@@ -30,6 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  sample_app: 'Sample App'
+  sample_app: 'Welcome to the Sample App!'
   about: 'About'
   help: 'Help'
+  contact: 'Contact'
+  sign_up: 'Sign Up'
