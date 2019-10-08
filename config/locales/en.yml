@@ -48,3 +48,6 @@ en:
       create:
         success: 'Welcome to the Sample App!'
         error: 'The account could not be created!'
+  sessions:
+    remember: 'Remember me on this computer'
+    sign_up: 'Sign up now!'
