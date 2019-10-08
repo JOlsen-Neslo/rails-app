@@ -37,7 +37,12 @@ en:
   sign_up: 'Sign Up'
   home: "Home"
   log_in: "Log in"
+  log_out: 'Log Out'
   users:
+    title: 'Users'
+    account: 'Account'
+    profile: 'Profile'
+    settings: 'Settings'
     new:
       submit: 'Create my account'
       create:
