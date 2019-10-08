@@ -37,3 +37,9 @@ en:
   sign_up: 'Sign Up'
   home: "Home"
   log_in: "Log in"
+  users:
+    new:
+      submit: 'Create my account'
+      create:
+        success: 'Welcome to the Sample App!'
+        error: 'The account could not be created!'
