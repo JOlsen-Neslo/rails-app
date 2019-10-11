@@ -4,16 +4,19 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   test "valid signup information" do
     get signup_path
     assert_difference 'User.count', 1 do
-      post_via_redirect users_path, params: {
+      post users_path, params: {
           user: {
               name: "Example User",
+              nickname: "nickname",
               email: "user@example.com",
               password: "password",
               password_confirmation: "password"
           }
       }
+      follow_redirect!
     end
     assert_template 'users/show'
+    assert is_logged_in?
   end
 
   test "invalid signup information" do
@@ -23,6 +26,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
           user: {
               name: "",
               email: "user@invalid",
+              nickname: "nickname",
               password: "foo",
               password_confirmation: "bar"
           }
