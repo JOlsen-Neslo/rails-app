@@ -5,9 +5,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: session_params[:email]&.downcase)
     if user && user.authenticate(session_params[:password])
-      log_in user
-      check_remember_me(session_params[:remember_me], user)
-      redirect_back_or user
+      check_if_activated user
     else
       flash.now[:danger] = I18n.t 'sessions.invalid'
       render 'new'
@@ -23,5 +21,16 @@ class SessionsController < ApplicationController
 
   def session_params
     params.require(:session).permit(:email, :password, :remember_me)
+  end
+
+  def check_if_activated(user)
+    if user.activated?
+      log_in user
+      session_params[:remember_me] == '1' ? remember(user) : forget(user)
+      redirect_back_or user
+    else
+      flash[:warning] = I18n.t 'sessions.inactive'
+      redirect_to root_url
+    end
   end
 end

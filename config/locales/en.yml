@@ -45,6 +45,8 @@ en:
     account: 'Account'
     profile: 'Profile'
     settings: 'Settings'
+    create:
+      activation: 'Please check your email to activate your account.'
     find:
       error: 'A user could not be found with that id!'
     index:
@@ -66,7 +68,18 @@ en:
       success: 'User deleted!'
       error: 'User could not be deleted!'
 
+  account:
+    activation:
+      success: 'Account activated!'
+      error: 'Invalid activation link'
+
   sessions:
     remember: 'Remember me on this computer'
     sign_up: 'Sign up now!'
     invalid: 'Invalid email/password combination'
+    inactive: 'Account not activated. Check your email for the activation link.'
+
+  user_mailer:
+    account_activation:
+      subject: 'Account activation'
+      activate: 'Activate'
