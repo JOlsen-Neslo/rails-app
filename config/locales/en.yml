@@ -35,19 +35,37 @@ en:
   help: 'Help'
   contact: 'Contact'
   sign_up: 'Sign Up'
-  home: "Home"
-  log_in: "Log in"
+  home: 'Home'
+  log_in: 'Log in'
   log_out: 'Log Out'
+  unauth: 'Please log in.'
+  delete: 'delete'
   users:
     title: 'Users'
     account: 'Account'
     profile: 'Profile'
     settings: 'Settings'
+    find:
+      error: 'A user could not be found with that id!'
+    index:
+      title: 'All Users'
     new:
       submit: 'Create my account'
+      confirmation: 'Confirmation'
       create:
         success: 'Welcome to the Sample App!'
         error: 'The account could not be created!'
+    edit:
+      title: 'Edit User'
+      heading: 'Update your profile'
+      confirmation: 'Confirmation'
+      submit: 'Save Changes'
+      error: 'There was an issue while updating the user!'
+      success: 'Successfully updated the user!'
+    destroy:
+      success: 'User deleted!'
+      error: 'User could not be deleted!'
+
   sessions:
     remember: 'Remember me on this computer'
     sign_up: 'Sign up now!'

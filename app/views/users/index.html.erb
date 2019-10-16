@@ -1,0 +1,10 @@
+<% provide(:title, I18n.t('users.index.title')) %>
+<h1><%= I18n.t 'users.index.title' %></h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+    <%= render @users %>
+</ul>
+
+<%= will_paginate %>
