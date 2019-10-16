@@ -45,6 +45,8 @@ en:
     account: 'Account'
     profile: 'Profile'
     settings: 'Settings'
+    find:
+      error: 'A user could not be found with that id!'
     index:
       title: 'All Users'
     new:
@@ -62,6 +64,7 @@ en:
       success: 'Successfully updated the user!'
     destroy:
       success: 'User deleted!'
+      error: 'User could not be deleted!'
 
   sessions:
     remember: 'Remember me on this computer'

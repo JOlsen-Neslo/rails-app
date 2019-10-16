@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user, only: :destroy
+  before_action :find_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.paginate(page: page_params[:page])
@@ -28,11 +29,10 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(require_id)
+    @user
   end
 
   def update
-    @user = User.find(require_id)
     if @user.update(user_params)
       flash[:success] = I18n.t 'users.edit.success'
       redirect_to @user
@@ -43,8 +43,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(require_id).destroy
-    flash[:success] = I18n.t 'users.destroy.success'
+    if @user.destroy
+      flash[:success] = I18n.t 'users.destroy.success'
+    else
+      flash[:error] = I18n.t 'users.destroy.error'
+    end
     redirect_to users_url
   end
 
@@ -52,6 +55,13 @@ class UsersController < ApplicationController
 
   def require_id
     params.require(:id)
+  end
+
+  def find_user
+    @user = User.find(require_id)
+    return true unless @user.nil?
+    flash[:error] = I18n.t('users.find.error')
+    false
   end
 
   def page_params
