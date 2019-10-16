@@ -68,6 +68,21 @@ en:
       success: 'User deleted!'
       error: 'User could not be deleted!'
 
+  resets:
+    title: 'Forgot password'
+    submit: 'Submit'
+    create:
+      success: 'Email sent with password reset instructions'
+      error: 'Email address not found'
+    edit:
+      title: 'Reset password'
+      submit: 'Update password'
+      confirmation: 'Confirmation'
+    update:
+      success: 'Password has been reset.'
+      error: 'can"t be empty'
+      expired: 'Password reset has expired.'
+
   account:
     activation:
       success: 'Account activated!'
@@ -83,3 +98,5 @@ en:
     account_activation:
       subject: 'Account activation'
       activate: 'Activate'
+    password_reset:
+      subject: 'Password reset'
