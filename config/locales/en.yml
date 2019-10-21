@@ -98,5 +98,11 @@ en:
     account_activation:
       subject: 'Account activation'
       activate: 'Activate'
+      greeting: 'Hi %{name},'
+      message: 'Welcome to the Sample App! Click on the link below to activate your account:'
     password_reset:
       subject: 'Password reset'
+      link: 'To reset your password click the link below:'
+      message: 'If you did not request your password to be reset, please ignore this email and your password will stay as it is.'
+      expire: 'This link will expire in two hours.'
+      

@@ -1,5 +1,5 @@
-Hi <%= @user.name %>,
+<%= I18n.t 'user_mailer.account_activation.greeting', :name => @current_user.name %>
 
-Welcome to the Sample App! Click on the link below to activate your account:
+<%= I18n.t 'user_mailer.account_activation.message' %>
 
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
