@@ -45,6 +45,8 @@ en:
     account: 'Account'
     profile: 'Profile'
     settings: 'Settings'
+    create:
+      activation: 'Please check your email to activate your account.'
     find:
       error: 'A user could not be found with that id!'
     index:
@@ -66,7 +68,41 @@ en:
       success: 'User deleted!'
       error: 'User could not be deleted!'
 
+  resets:
+    title: 'Forgot password'
+    submit: 'Submit'
+    create:
+      success: 'Email sent with password reset instructions'
+      error: 'Email address not found'
+    edit:
+      title: 'Reset password'
+      submit: 'Update password'
+      confirmation: 'Confirmation'
+    update:
+      success: 'Password has been reset.'
+      error: 'can"t be empty'
+      expired: 'Password reset has expired.'
+
+  account:
+    activation:
+      success: 'Account activated!'
+      error: 'Invalid activation link'
+
   sessions:
     remember: 'Remember me on this computer'
     sign_up: 'Sign up now!'
     invalid: 'Invalid email/password combination'
+    inactive: 'Account not activated. Check your email for the activation link.'
+
+  user_mailer:
+    account_activation:
+      subject: 'Account activation'
+      activate: 'Activate'
+      greeting: 'Hi %{name},'
+      message: 'Welcome to the Sample App! Click on the link below to activate your account:'
+    password_reset:
+      subject: 'Password reset'
+      link: 'To reset your password click the link below:'
+      message: 'If you did not request your password to be reset, please ignore this email and your password will stay as it is.'
+      expire: 'This link will expire in two hours.'
+      

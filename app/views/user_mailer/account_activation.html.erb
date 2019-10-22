@@ -1,0 +1,10 @@
+<h1><%= I18n.t 'sample_app' %></h1>
+
+<p><%= I18n.t 'user_mailer.account_activation.greeting', :name => @current_user.name %></p>
+
+<p><%= I18n.t 'user_mailer.account_activation.message' %></p>
+
+<%= link_to I18n.t('user_mailer.account_activation.activate'), edit_account_activation_url(
+    @user.activation_token,
+    email: @user.email
+) %>

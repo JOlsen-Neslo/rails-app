@@ -16,9 +16,8 @@ module AuthenticationConcern
     end
 
     # Returns true if the given token matches the digest.
-    def authenticated?(remember_token, remember_digest = nil)
-      return false if remember_digest.nil?
-      BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    def authenticated?(token, digest = nil)
+      return false if digest.present? && BCrypt::Password.new(digest).is_password?(token)
     end
   end
 end
